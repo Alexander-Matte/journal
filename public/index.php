@@ -5,6 +5,12 @@ const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . "Core/functions.php";
 
-require BASE_PATH . "controllers/index.php";
+
+
+if($_SERVER["REQUEST_URI"] === "/") {
+    require BASE_PATH . "controllers/index.php";
+} elseif ($_SERVER["REQUEST_URI"] === "/contact") {
+    require BASE_PATH . "controllers/contact.php";
+}
 
 ?>

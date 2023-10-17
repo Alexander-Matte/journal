@@ -5,7 +5,7 @@
 
 <main>
     <div>
-        <p>This is our home page. Content about journaling will go here</p>
+        <p>This page will be used to display a contact form</p>
     </div>
 </main>
 
