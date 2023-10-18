@@ -14,4 +14,9 @@ function view($viewName)
     return BASE_PATH . "/views/" . $viewName;
 }
 
+function base(string $path)
+{
+    return BASE_PATH . $path;
+}
+
 ?>
