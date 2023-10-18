@@ -8,10 +8,14 @@
       <!-- Section: CTA -->
       <section class="">
         <p class="d-flex justify-content-center align-items-center">
-          <span class="me-3">Register for free</span>
-          <button type="button" class="btn btn-outline-light btn-rounded">
-            Sign up!
-          </button>
+          <a href="/signup">
+            <span class="me-3">Register for free</span>
+          </a>
+          <a href="/login">
+            <button type="button" class="btn btn-outline-light btn-rounded">
+              Sign in!
+            </button>
+          </a>
         </p>
       </section>
       <!-- Section: CTA -->

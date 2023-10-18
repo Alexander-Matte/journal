@@ -1,0 +1,12 @@
+<?php require(base("views/partials/header.php")) ?>
+<?php require(base("views/partials/nav.php")) ?>
+<?php require(base("views/partials/banner.php")) ?>
+
+
+<main>
+    <div>
+        <p>This page will be used to display login form</p>
+    </div>
+</main>
+
+<?php require(base('views/partials/footer.php')) ?>
