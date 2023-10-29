@@ -17,5 +17,9 @@ $routes = [
     "url" => "/signup",
     "controller" => "controllers/signup/create.php"
     ],
+    [
+    "url" => "/journal",
+    "controller" => "controllers/journal/create.php"
+    ],
     
 ];
