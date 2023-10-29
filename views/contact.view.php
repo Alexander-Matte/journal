@@ -4,7 +4,7 @@
 
 
 <main>
-    <div>
+    <div class="ms-5">
         <p>This page will be used to display a contact form</p>
     </div>
 </main>

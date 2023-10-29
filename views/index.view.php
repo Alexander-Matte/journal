@@ -4,7 +4,7 @@
 
 
 <main>
-    <div>
+    <div class="ms-5">
         <p>This is our home page. Content about journaling will go here</p>
     </div>
 </main>
