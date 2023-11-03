@@ -5,7 +5,7 @@
 
 <main>
     <div>
-        <p>This page will be used to display a registration form</p>
+        <p class="ms-5">This page will be used to display a registration form</p>
     </div>
 </main>
 

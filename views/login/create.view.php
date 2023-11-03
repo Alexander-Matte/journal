@@ -5,7 +5,7 @@
 
 <main>
     <div>
-        <p>This page will be used to display login form</p>
+        <p class="ms-5">This page will be used to display login form</p>
     </div>
 </main>
 
