@@ -5,9 +5,11 @@
 
     <main>
         <div class="ms-5">
-            <p>Here we will add journal entries to our DB</p>
+            <p>Here we will view journal entries and create if none are present</p>
         </div>
-        <div class="container mt-5">
+
+
+<!--     <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6">
                     <form method="post">
@@ -19,7 +21,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
     </main>
 
 <?php require('partials/footer.php') ?>
