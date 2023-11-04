@@ -11,15 +11,15 @@ $routes = [
     ],
     [
     "url" => "/login",
-    "controller" => "controllers/login/create.php"
+    "controller" => "controllers/login/index.php"
     ],
     [
     "url" => "/signup",
-    "controller" => "controllers/signup/create.php"
+    "controller" => "controllers/signup/index.php"
     ],
     [
     "url" => "/journal",
-    "controller" => "controllers/journal/create.php"
+    "controller" => "controllers/journal/index.php"
     ],
     
 ];
