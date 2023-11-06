@@ -3,8 +3,8 @@
 <?php require('partials/banner.php') ?>
 
 
-<main>
-    <div class="ms-5">
+<main class="ms-5">
+    <div>
         <p>This page will be used to display a contact form</p>
     </div>
 </main>

@@ -3,7 +3,7 @@
 <?php require('partials/banner.php') ?>
 
 
-<main>
+<main class="ms-5">
     <div>
         <h5>404 Page not found!</h5>
     </div>
