@@ -21,5 +21,13 @@ $routes = [
     "url" => "/journal",
     "controller" => "controllers/journal/index.php"
     ],
+    [
+    "url" => "/journal/create",
+    "controller" => "controllers/journal/create.php"
+    ],
+    [
+    "url" => "/journal/entry",
+    "controller" => "controllers/journal/entry.php"
+    ],
     
 ];
