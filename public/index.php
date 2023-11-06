@@ -13,7 +13,10 @@ require base("Core/Router.php");
 require base("routes.php");
 require base("Core/Database.php");
 
+$uri = parse_url($_SERVER["REQUEST_URI"]);
+
+
 $router = new Router($routes);
-$router->route($_SERVER["REQUEST_URI"]);
+$router->route($uri["path"]);
 
 ?>
