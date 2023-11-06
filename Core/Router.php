@@ -15,7 +15,6 @@ class Router
    {
     foreach ($this->routes as $route) {
         if ($route['url'] === $url) {
-           
             return require base($route["controller"]);
         }
     }

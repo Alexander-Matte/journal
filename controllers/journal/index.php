@@ -8,6 +8,5 @@ $db = new Database();
 
 $results = $db->query("SELECT * FROM `entries` LIMIT 50")->findAll();
 
-dd($results);
 
-require view("journal.view.php");
+require view("journal/index.view.php");
