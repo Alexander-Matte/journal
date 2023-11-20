@@ -1,21 +1,15 @@
 {
     "name": "alex/journal",
-    "description": "A simple web journal to keep track of your day to day.",
-    "require-dev": {
-        "twbs/bootstrap": "5.3.2"
-    },
+    "description": "Basic journaling app build with php",
     "autoload": {
         "psr-4": {
-            "Alex\\Journal\\": "public/"
+            "Core\\": "Core/"
         }
     },
     "authors": [
         {
-            "name": "Alex Matte",
-            "email": "alex.matte71@gmail.com"
+            "name": "Alexander Matte"
         }
     ],
-  "require": {
-    "ext-pdo": "*"
-  }
+    "require": {}
 }
