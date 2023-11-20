@@ -2,4 +2,4 @@
 
 $header = "Sign up";
 
-require view("signup/create.view.php");
+require view("signup/index.view.php");
