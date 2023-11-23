@@ -25,23 +25,28 @@
         <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/journal">Journal</a>
-        </li>
+          <?php if (isset($_SESSION["userId"])): ?>
+              <li class="nav-item">
+                  <a class="nav-link" href="/journal">Journal</a>
+              </li>
+          <?php endif ?>
+
       </ul>
       <!-- Left links -->
 
         <div class="d-flex justify-content-between align-items-center">
-            <?php if (!isset($_SESSION["userID"])): ?>
+            <?php if (!isset($_SESSION["userId"])): ?>
                 <a href="/login">
                     <button type="button" class="btn btn-link px-3 me-2">
                         Login
                     </button>
                 </a>
             <?php else: ?>
-                <div class="logged-in px-3 me-2">
-                    Log Out
-                </div>
+                <a href="/logout">
+                    <button type="button" class="btn btn-link px-3 me-2">
+                        Log Out
+                    </button>
+                </a>
             <?php endif ?>
 
             <a href="/signup">
