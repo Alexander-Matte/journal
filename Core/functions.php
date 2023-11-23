@@ -25,7 +25,12 @@ function base(string $path)
  */
 function logIn($user)
 {
-    $_SESSION["userID"] = $user["id"];
+    $_SESSION["userId"] = $user["id"];
+}
+
+function logOut()
+{
+    session_destroy();
 }
 
 ?>
