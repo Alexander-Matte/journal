@@ -53,4 +53,16 @@ class Database
         return $result;
     }
 
+    public function addUser($email, $password, $firstname = null, $lastname = null)
+    {
+        $this->query("INSERT INTO users (firstname, lastname, password, email)
+            VALUES (:firstname, :lastname, :password, :email)", [
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'password' => $password,
+            "email" => $email
+        ]);
+    }
+
+
 }
