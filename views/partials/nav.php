@@ -31,20 +31,26 @@
       </ul>
       <!-- Left links -->
 
-      <div class="d-flex align-items-center">
-        <a href="/login">
-          <button type="button" class="btn btn-link px-3 me-2">
-            Login
-          </button>
-        </a>
+        <div class="d-flex justify-content-between align-items-center">
+            <?php if (!isset($_SESSION["userID"])): ?>
+                <a href="/login">
+                    <button type="button" class="btn btn-link px-3 me-2">
+                        Login
+                    </button>
+                </a>
+            <?php else: ?>
+                <div class="logged-in px-3 me-2">
+                    Log Out
+                </div>
+            <?php endif ?>
 
-        <a href="/signup">
-          <button type="button" class="btn btn-primary me-3">
-            Sign up for free
-          </button>
-        </a>
-        
-      </div>
+            <a href="/signup">
+                <button type="button" class="btn btn-primary me-3">
+                    Sign up for free
+                </button>
+            </a>
+        </div>
+
     </div>
     <!-- Collapsible wrapper -->
   </div>
