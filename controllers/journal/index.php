@@ -4,9 +4,18 @@ use Core\Database;
 
 $header = "Journal Entries";
 
-$db = new Database();
+if(!isset($_SESSION["userId"]))
+{
+    require base("controllers/403.php");
+    exit();
+}
 
-$results = $db->query("SELECT * FROM `entries` LIMIT 50")->findAll();
+$db = new Database();
+$userId = $_SESSION["userId"];
+
+$results = $db->query("SELECT * FROM `entries` WHERE user_id = :id", [
+    "id" => $userId
+])->findAll();
 
 
 require view("journal/index.view.php");
