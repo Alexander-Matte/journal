@@ -47,6 +47,7 @@ class Database
 
         if (! $result) {
             echo "No result has been found!";
+            return false;
         }
 
         return $result;
