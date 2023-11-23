@@ -19,4 +19,13 @@ function base(string $path)
     return BASE_PATH . $path;
 }
 
+/**
+ * @param $user
+ * @return mixed
+ */
+function logIn($user)
+{
+    $_SESSION["userID"] = $user["id"];
+}
+
 ?>
