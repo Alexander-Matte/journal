@@ -4,6 +4,12 @@ $header = "Create a journal entry";
 //Temp hard coded until authentication is built
 $userId = 1;
 
+if(!isset($_SESSION["userId"]))
+{
+    require base("controllers/403.php");
+    exit();
+}
+
 $db = new Core\Database();
 if(isset($_POST["content"]))
 {
