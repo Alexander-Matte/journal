@@ -29,5 +29,9 @@ $routes = [
     "url" => "/journal/entry",
     "controller" => "controllers/journal/entry.php"
     ],
+    [
+        "url" => "/logout",
+        "controller" => "controllers/logout.php"
+    ],
     
 ];
