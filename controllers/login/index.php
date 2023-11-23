@@ -1,22 +1,20 @@
 <?php
-
+use \Core\Authenticator;
 $header = "Log in";
 
-$db = new Core\Database();
 
 if(isset($_POST["password"]))
 {
-    $result = $db->query("SELECT * FROM `users` WHERE email = :email AND password = :password", [
-        "email" => $_POST["email"],
-        "password" => $_POST["password"]
-    ])->findOrFail();
+    if(Authenticator::authenticateUser($_POST["email"], $_POST["password"]))
+    {
+        $user = Authenticator::authenticateUser($_POST["email"], $_POST["password"]);
+        logIn($user);
+        header("Location: /");
+        exit();
+    }
+
+    header($_SERVER["HTTP_REFERER"]);
+
 }
-
-$_SESSION["user"] = $result["id"];
-
-var_dump($_SESSION);
-
-
-
 
 require view("login/index.view.php");
