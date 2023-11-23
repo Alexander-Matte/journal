@@ -4,17 +4,17 @@ use Core\Database;
 
 $header = "Journal Entry";
 
-$db = new Database();
-//Temporary hardcoded while figuring out authentication
-$userLoggedIn = 4;
-
-if($userLoggedIn != $_GET["id"])
+if(!isset($_SESSION["userId"]))
 {
     require base("controllers/403.php");
     exit();
 }
+
+$db = new Database();
+
+$userId = $_SESSION["userId"];
 $result = $db->query("SELECT * FROM `entries` WHERE id = :id", [
-    "id" => $_GET["id"]
+    "id" => $userId
 ])->findOrFail();
 
 
