@@ -41,6 +41,11 @@
                         Login
                     </button>
                 </a>
+                <a href="/signup">
+                    <button type="button" class="btn btn-primary me-3">
+                        Sign up for free
+                    </button>
+                </a>
             <?php else: ?>
                 <a href="/logout">
                     <button type="button" class="btn btn-link px-3 me-2">
@@ -49,11 +54,6 @@
                 </a>
             <?php endif ?>
 
-            <a href="/signup">
-                <button type="button" class="btn btn-primary me-3">
-                    Sign up for free
-                </button>
-            </a>
         </div>
 
     </div>
