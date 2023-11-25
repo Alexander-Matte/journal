@@ -4,9 +4,6 @@
 
 
 <main>
-    <div>
-        <p class="ms-5">This page will be used to display login form</p>
-    </div>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4">
