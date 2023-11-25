@@ -30,8 +30,8 @@ $routes = [
     "controller" => "controllers/journal/entry.php"
     ],
     [
-        "url" => "/logout",
-        "controller" => "controllers/logout.php"
+    "url" => "/logout",
+    "controller" => "controllers/logout.php"
     ],
     
 ];
