@@ -13,8 +13,10 @@ if(!isset($_SESSION["userId"]))
 $db = new Database();
 
 $userId = $_SESSION["userId"];
-$result = $db->query("SELECT * FROM `entries` WHERE id = :id", [
-    "id" => $userId
+
+$result = $db->query("SELECT * FROM `entries` WHERE user_id = :id AND id = :postId", [
+    "id" => $userId,
+    "postId" => $_GET["id"]
 ])->findOrFail();
 
 
