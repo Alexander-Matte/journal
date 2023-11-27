@@ -10,17 +10,19 @@ if(!isset($_SESSION["userId"]))
     exit();
 }
 
+$postId = $_GET["id"];
+
 $db = new Database();
 
 $userId = $_SESSION["userId"];
 
 $result = $db->query("SELECT * FROM `entries` WHERE user_id = :id AND id = :postId", [
     "id" => $userId,
-    "postId" => $_GET["id"]
+    "postId" => $postId
 ])->findOrFail();
 
 
 
 
 
-require view("journal/entry.view.php");
+require view("journal/show.view.php");
