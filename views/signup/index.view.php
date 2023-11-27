@@ -3,8 +3,8 @@
 <?php require(base("views/partials/banner.php")) ?>
 
 <main>
-    <div>
-        <p class="ms-5">This page will be used to display a sign-up form</p>
+    <div class="container">
+        <p>This page will be used to display a sign-up form</p>
     </div>
     <div class="container mt-5">
         <div class="row justify-content-center">

@@ -1,5 +1,9 @@
-<header>
-    <div>
-        <h1 class="ms-5"><?= $header ?></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <header>
+                <h1><?= $header ?></h1>
+            </header>
+        </div>
     </div>
-</header>
+</div>

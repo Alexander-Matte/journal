@@ -3,8 +3,8 @@
 <?php require('partials/banner.php') ?>
 
 
-<main class="ms-5">
-    <div>
+<main>
+    <div class="container">
         <p>This is our home page. Content about journaling will go here</p>
     </div>
 </main>
