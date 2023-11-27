@@ -26,12 +26,20 @@ $routes = [
     "controller" => "controllers/journal/create.php"
     ],
     [
-    "url" => "/journal/entry",
-    "controller" => "controllers/journal/entry.php"
+    "url" => "/journal/show",
+    "controller" => "controllers/journal/show.php"
     ],
     [
     "url" => "/logout",
     "controller" => "controllers/logout.php"
+    ],
+    [
+    "url" => "/journal/edit",
+    "controller" => "controllers/journal/edit.php"
+    ],
+    [
+    "url" => "/journal/destroy",
+    "controller" => "controllers/journal/destroy.php"
     ],
     
 ];
