@@ -3,27 +3,28 @@
 <?php require(base("views/partials/banner.php")) ?>
 
 
-    <main class="ms-5">
-        <div>
-            <p>Here we will view journal entries and create if none are present</p>
-        </div>
-        <a href="/journal/create">
-            <div class="create-entry-btn mb-4">
-                <button type="button" class="btn btn-primary">Create a Journal Entry</button>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="mb-4">
+                    <a href="/journal/create" class="btn btn-primary btn-lg btn-block mb-4">Create a Journal Entry</a>
+                </div>
+                <?php foreach($results as $key => $value): ?>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href=<?= "journal/show?id={$value["id"]}" ?>>
+                                    <?= $value["title"]; ?>
+                                </a>
+                            </h5>
+                            <p class="card-text"><?= $value["content"]; ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-        </a>
-
-
-
-        <?php foreach($results as $key=>$value): ?>
-            <ul>
-                <li>
-                    <a href=<?= "journal/entry?id={$value["id"]}" ?>>
-                        <?= $value["title"]; ?>
-                    </a>
-                </li>
-            </ul>
-        <?php endforeach; ?>
+        </div>
     </main>
+
+
 
 <?php require(base('views/partials/footer.php')) ?>
