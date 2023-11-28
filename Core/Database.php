@@ -45,8 +45,7 @@ class Database
     {
         $result = $this->find();
 
-        if (! $result) {
-            echo "No result has been found!";
+        if (!$result) {
             return false;
         }
 
