@@ -15,7 +15,7 @@
                         <div class="card-footer d-flex justify-content-end">
                             <div class="btn-group">
                                 <a href="/journal/edit?id=<?= $postId ?>" class="btn btn-primary me-2">Edit Entry</a>
-                                <a href="/journal/destroy?id=<?= $postId ?>" class="btn btn-danger">Delete Entry</a>
+                                <a href="/journal/destroy?id=<?= $postId ?>" class="btn btn-danger" onclick="return confirmDelete()">Delete Entry</a>
                             </div>
                         </div>
                     </article>
@@ -23,7 +23,18 @@
             </div>
         </div>
     </main>
-
+    <script>
+        function confirmDelete() {
+            // Display a confirmation dialog
+            if (confirm("Are you sure you want to delete this entry?")) {
+                // If user confirms, proceed with deletion
+                return true;
+            } else {
+                // If user cancels, prevent the default action (deletion)
+                return false;
+            }
+        }
+    </script>
 
 
 <?php require(base('views/partials/footer.php')) ?>
