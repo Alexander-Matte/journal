@@ -20,6 +20,12 @@
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            <?php if(!empty($errors)): ?>
+                            <div class="alert alert-danger mt-3" role="alert">
+                                <?= $errors ?>
+                            </div>
+                            <?php endif; ?>
+
                         </form>
                     </div>
                 </div>
