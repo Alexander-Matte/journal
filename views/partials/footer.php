@@ -6,19 +6,32 @@
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: CTA -->
-      <section class="">
-        <p class="d-flex justify-content-center align-items-center">
-          <a href="/signup">
-            <span class="me-3">Register for free</span>
-          </a>
-          <a href="/login">
-            <button type="button" class="btn btn-outline-light btn-rounded">
-              Sign in!
-            </button>
-          </a>
-        </p>
-      </section>
-      <!-- Section: CTA -->
+        <section class="">
+            <?php if (!isset($_SESSION["userId"])): ?>
+                <p class="d-flex justify-content-center align-items-center">
+                    <a href="/login" class="me-2">
+                        <button type="button" class="btn btn-link px-3">
+                            Login
+                        </button>
+                    </a>
+                    <a href="/signup">
+                        <button type="button" class="btn btn-primary me-3">
+                            Sign up for free
+                        </button>
+                    </a>
+                </p>
+            <?php else: ?>
+                <p class="d-flex justify-content-center align-items-center">
+                    <a href="/logout">
+                        <button type="button" class="btn btn-link px-3 me-2">
+                            Log Out
+                        </button>
+                    </a>
+                </p>
+            <?php endif ?>
+        </section>
+
+        <!-- Section: CTA -->
     </div>
     <!-- Grid container -->
 
