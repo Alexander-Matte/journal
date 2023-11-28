@@ -1,5 +1,5 @@
 <?php
 
-logOut();
+\Core\Session::destroy();
 header("Location: /");
 exit();
