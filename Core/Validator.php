@@ -10,8 +10,7 @@ class Validator
         $errors = [];
         if(!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
-            array_push($errors, "Email is invalid");
-            return $errors;
+            return false;
         }
 
         return filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -23,8 +22,7 @@ class Validator
         $password_regex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/";
         if(!preg_match($password_regex, $password))
         {
-            array_push($errors, "password is not strong enough!");
-            return $errors;
+            return false;
         }
 
         return preg_match($password_regex, $password);
