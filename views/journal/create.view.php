@@ -4,10 +4,6 @@
 
 
     <main class="ms-5">
-        <div>
-            <p>Create a journal entry here</p>
-        </div>
-
                <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-6">
