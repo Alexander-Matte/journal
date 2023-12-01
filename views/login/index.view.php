@@ -5,6 +5,11 @@
 
 <main>
     <div class="container mt-5">
+        <div class="message">
+            <?php if(isset($message)): ?>
+                <div class="alert alert-success"><?= $message ?></div>
+            <?php endif;?>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
