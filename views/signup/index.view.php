@@ -3,9 +3,6 @@
 <?php require(base("views/partials/banner.php")) ?>
 
 <main>
-    <div class="container">
-        <p>This page will be used to display a sign-up form</p>
-    </div>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -27,7 +24,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                                 <div id="passwordHelp" class="form-text text-danger"></div>
                             </div>
 
@@ -35,15 +32,15 @@
                             <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
                             <small class="form-text text-muted mt-2">Note: First Name and Last Name are optional fields.</small>
                         </form>
+                        <ul class="list-unstyled mt-2">
                         <?php if(isset($errors)): ?>
                             <?php foreach($errors as $error): ?>
-                                <ul class="list-unstyled">
                                     <li class="alert alert-danger">
                                         <?= $error; ?>
                                     </li>
-                                </ul>
                             <?php endforeach; ?>
                         <?php endif ?>
+                        </ul>
                     </div>
                 </div>
             </div>
