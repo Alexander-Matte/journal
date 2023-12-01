@@ -1,44 +1,60 @@
 <?php
 use Core\Authenticator;
 use Core\Database;
+use Core\Session;
 use Core\Validator;
 $header = "Sign up";
 $errors = [];
 
-if(isset($_POST["email"]) && isset($_POST["password"]))
-{
-    // if email already exists in DB
-    if(Authenticator::email($_POST["email"]))
+
+if(Session::has('signup_errors')) {
+    $errors = Session::get('signup_errors');
+    Session::unflash();
+}
+
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+    if(!empty($_POST["email"]) && !empty($_POST["password"]))
     {
-        $errors = array_push($errors, "Email already in use");
-        require view("signup/index.view.php");
+        // if email already exists in DB
+        $user = Authenticator::email($_POST["email"]);
+        if($user)
+        {
+            $errors[] = "Email already in use";
+            Session::flash("signup_errors", $errors);
+            header("Location: /signup");
+            exit();
+        }
+
+        $validEmail = Validator::validateEmail($_POST["email"]);
+        if(!$validEmail)
+        {
+            $errors[] = "Invalid email! Please try again";
+            Session::flash("signup_errors", $errors);
+            header("Location: /signup");
+            exit();
+        }
+
+        $validPassword = Validator::validatePassword($_POST["password"]);
+        if(!$validPassword)
+        {
+            $errors[] = "Password is to weak! Please try again.";
+            Session::flash("signup_errors", $errors);
+            header("Location: /signup");
+            exit();
+        }
+        Session::unflash();
+        $db = new Database();
+        $db->addUser($_POST["email"],$_POST["password"],$_POST["firstName"],$_POST["lastName"]);
+        Session::flash("reg_status", "true");
+        header("Location: /login");
         exit();
     }
-    $email = Validator::validateEmail($_POST["email"]);
-    if(is_array($email))
-    {
-        $errors = $email;
-        require view("signup/index.view.php");
-        exit();
-    }
-
-    $result = Validator::validatePassword($_POST["password"]);
-
-    if(is_array($result))
-    {
-        $errors = $result;
-        require view("signup/index.view.php");
-        exit();
-    }
-
-    $db = new Database();
-    $db->addUser($_POST["email"],$_POST["password"],$_POST["firstName"],$_POST["lastName"]);
-    //TODO: Notify user of successful login
-    header("Location: http://localhost:7171/login");
+    $errors[] = "Email or password was not set";
+    Session::flash("signup_errors", $errors);
+    header("Location: /signup");
     exit();
 
-
-
 }
+
 
 require view("signup/index.view.php");
