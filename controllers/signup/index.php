@@ -6,6 +6,10 @@ use Core\Validator;
 $header = "Sign up";
 $errors = [];
 
+if (Session::has('userId')) {
+    header('Location: /');
+    exit();
+}
 
 if(Session::has('signup_errors')) {
     $errors = Session::get('signup_errors');

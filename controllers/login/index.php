@@ -6,6 +6,11 @@ $header = "Log in";
 $errors = [];
 $successRegistration = false;
 
+if (Session::has('userId')) {
+    header('Location: /');
+    exit();
+}
+
 if (Session::has("errors")) {
     $errors = Session::get("errors");
     Session::unflash();
