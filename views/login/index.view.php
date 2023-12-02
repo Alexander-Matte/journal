@@ -18,11 +18,11 @@
                         <form method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Login</button>
                             <?php if(!empty($errors)): ?>
