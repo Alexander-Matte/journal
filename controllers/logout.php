@@ -1,5 +1,7 @@
 <?php
 
-\Core\Session::destroy();
+use Core\Session;
+
+Session::destroy();
 header("Location: /");
 exit();
