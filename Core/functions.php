@@ -19,18 +19,14 @@ function base(string $path)
     return BASE_PATH . $path;
 }
 
-/**
- * @param $user
- * @return mixed
- */
-function logIn($user)
+function abort($statusCode = 404)
 {
-    $_SESSION["userId"] = $user["id"];
+    http_response_code($statusCode);
+    require base('controllers/httpResponse.php');
+    exit();
+
 }
 
-function logOut()
-{
-    session_destroy();
-}
+
 
 ?>

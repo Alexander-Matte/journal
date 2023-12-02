@@ -6,8 +6,7 @@ $header = "Journal Entry";
 
 if(!isset($_SESSION["userId"]))
 {
-    require base("controllers/403.php");
-    exit();
+    abort(403);
 }
 
 $postId = $_GET["id"];

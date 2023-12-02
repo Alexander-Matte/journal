@@ -4,8 +4,7 @@ $header = "Create a journal entry";
 
 if(!isset($_SESSION["userId"]))
 {
-    require base("controllers/403.php");
-    exit();
+    abort(403);
 }
 $userId = $_SESSION["userId"];
 

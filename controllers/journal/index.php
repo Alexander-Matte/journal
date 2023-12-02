@@ -6,8 +6,7 @@ $header = "Journal Entries";
 
 if(!isset($_SESSION["userId"]))
 {
-    require base("controllers/403.php");
-    exit();
+    abort(403);
 }
 
 $db = new Database();

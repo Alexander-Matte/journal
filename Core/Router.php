@@ -18,8 +18,8 @@ class Router
             return require base($route["controller"]);
         }
     }
-
-    return require base("controllers/404.php");
+    abort();
+    return false;
    }
 
 
