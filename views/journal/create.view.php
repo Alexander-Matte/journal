@@ -20,7 +20,7 @@
                                     <div class="valid-feedback">Looks good!</div>
                                     <div class="invalid-feedback">Please enter content with at least 10 characters.</div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
                     </div>
