@@ -1,10 +1,10 @@
 <?php
-
 use Core\Database;
+use Core\Session;
 
 $header = "Journal Entry";
 
-if(!isset($_SESSION["userId"]))
+if(!Session::has("userId"))
 {
     abort(403);
 }
@@ -13,7 +13,7 @@ $postId = $_GET["id"];
 
 $db = new Database();
 
-$userId = $_SESSION["userId"];
+$userId = Session::get("userId");
 
 $result = $db->query("SELECT * FROM `entries` WHERE user_id = :id AND id = :postId", [
     "id" => $userId,

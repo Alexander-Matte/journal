@@ -1,12 +1,14 @@
 <?php
+use Core\Database;
+use Core\Session;
 
 $header = "Edit your journal entry";
 
-if(!isset($_SESSION["userId"]))
+if(!Session::has("userId"))
 {
     abort(403);
 }
-$userId = $_SESSION["userId"];
+$userId = Session::get("userId");
 
 if(isset($_POST["content"]) && isset($_POST["title"]))
 {
@@ -15,7 +17,7 @@ if(isset($_POST["content"]) && isset($_POST["title"]))
     require base("controllers/journal/update.php");
 }
 
-$db = new Core\Database();
+$db = new Database();
 $postId = $_GET["id"];
 
 $result = $db->query("SELECT * FROM `entries` WHERE user_id = :id AND id = :postId", [

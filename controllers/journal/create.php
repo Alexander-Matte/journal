@@ -1,4 +1,6 @@
 <?php
+use Core\Database;
+use Core\Session;
 
 $header = "Create a journal entry";
 
@@ -6,9 +8,12 @@ if(!isset($_SESSION["userId"]))
 {
     abort(403);
 }
-$userId = $_SESSION["userId"];
+$userId = Session::get("userId");
 
-$db = new Core\Database();
+
+
+
+$db = new Database();
 
 if(isset($_POST["content"]) && isset($_POST["title"]))
 {

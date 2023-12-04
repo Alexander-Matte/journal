@@ -1,13 +1,15 @@
 <?php
+use Core\Database;
+use Core\Session;
 
-if(!isset($_SESSION["userId"]))
+if(!Session::has("userId"))
 {
     abort(403);
 }
-$userId = $_SESSION["userId"];
+$userId = Session::get("userId");
 $postId = $_GET["id"];
 
-$db = new Core\Database();
+$db = new Database();
 
 $result = $db->query("UPDATE entries SET title = :title, content = :content WHERE id = :entryId AND user_id = :userId", [
     'title' => $title,

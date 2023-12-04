@@ -1,16 +1,16 @@
 <?php
-
 use Core\Database;
+use Core\Session;
 
 $header = "Journal Entries";
 
-if(!isset($_SESSION["userId"]))
+if(!Session::has("userId"))
 {
     abort(403);
 }
 
 $db = new Database();
-$userId = $_SESSION["userId"];
+$userId = Session::get("userId");
 
 $results = $db->query("SELECT * FROM `entries` WHERE user_id = :id", [
     "id" => $userId
