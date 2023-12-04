@@ -5,13 +5,12 @@ function dd($value)
     echo "<pre>";
     var_dump($value);
     echo "</pre>";
-
     die();
 }
 
 function view($viewName)
 {
-    return BASE_PATH . "/views/" . $viewName;
+    return base('views/' . $viewName);
 }
 
 function base(string $path)
@@ -22,8 +21,20 @@ function base(string $path)
 function abort($statusCode = 404)
 {
     http_response_code($statusCode);
-    require base('controllers/httpResponse.php');
+    require base('Core/httpResponse.php');
     exit();
+
+}
+
+function redirect($path)
+{
+    header('Location: ' . $path);
+    exit();
+}
+
+function hashPassword($password)
+{
+    return password_hash($password, PASSWORD_DEFAULT);
 
 }
 
