@@ -10,8 +10,8 @@ $postId = $_GET["id"];
 $db = new Core\Database();
 
 $result = $db->query("UPDATE entries SET title = :title, content = :content WHERE id = :entryId AND user_id = :userId", [
-    'title' => $_POST["title"],
-    'content' => $_POST["content"],
+    'title' => $title,
+    'content' => $content,
     'entryId' => $postId,
     'userId' => $userId
 ]);
