@@ -7,8 +7,7 @@ $errors = [];
 $successRegistration = false;
 
 if (Session::has('userId')) {
-    header('Location: /');
-    exit();
+    redirect('/');
 }
 
 if (Session::has("errors")) {
@@ -21,23 +20,21 @@ if(Session::has("reg_status")) {
     $message = "Registration was successful! Please log in below!";
     Session::unflash();
 }
-if($_SERVER['REQUEST_METHOD'] === "POST") {
+if(isset($_POST['submit'])) {
     if (!empty($_POST["password"])) {
-        $authenticated = Authenticator::authenticateUser($_POST["email"], $_POST["password"]);
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $user = Authenticator::authenticateUser($email,$password);
 
-        if (!$authenticated) {
+        if (!$user) {
             $error = "No user found with given username and password!";
             Session::flash("errors", $error); // Flash the error message
-            header("Location: /login");
-            exit();
+            redirect('/login');
         }
 
-        $user = Authenticator::authenticateUser($_POST["email"], $_POST["password"]); // Retrieve user details
         Session::unflash();
         Session::set("userId", $user["id"]); // Set user details in the session
-        header("Location: /");
-        exit();
-
+        redirect('/');
     }
 }
 
