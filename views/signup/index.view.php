@@ -29,7 +29,7 @@
                             </div>
 
 
-                            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">Sign Up</button>
                             <small class="form-text text-muted mt-2">Note: First Name and Last Name are optional fields.</small>
                         </form>
                         <ul class="list-unstyled mt-2">

@@ -24,7 +24,7 @@
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
                             <?php if(!empty($errors)): ?>
                             <div class="alert alert-danger mt-3" role="alert">
                                 <?= $errors ?>
