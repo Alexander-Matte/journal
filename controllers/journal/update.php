@@ -15,5 +15,4 @@ $result = $db->query("UPDATE entries SET title = :title, content = :content WHER
     'entryId' => $postId,
     'userId' => $userId
 ]);
-header("Location: /journal/show?id=$postId");
-exit();
+redirect('/journal/show?id=' . $postId);

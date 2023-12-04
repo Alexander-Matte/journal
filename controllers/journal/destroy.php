@@ -15,5 +15,4 @@ $result = $db->query("DELETE FROM `entries` WHERE user_id = :id AND id = :postId
     "postId" => $postId
 ]);
 
-header("Location: /journal");
-exit();
+redirect('/journal');

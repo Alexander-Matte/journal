@@ -11,7 +11,6 @@ $userId = $_SESSION["userId"];
 if(isset($_POST["content"]) && isset($_POST["title"]))
 {
     require base("controllers/journal/update.php");
-    exit();
 }
 
 $db = new Core\Database();

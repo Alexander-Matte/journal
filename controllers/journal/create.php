@@ -18,8 +18,7 @@ if(isset($_POST["content"]) && isset($_POST["title"]))
         'content' => $_POST["content"]
     ]);
 
-    header("Location: /journal");
-    exit();
+    redirect('/journal');
 }
 
 
