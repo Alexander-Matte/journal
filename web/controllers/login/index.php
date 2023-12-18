@@ -1,6 +1,6 @@
 <?php
-use \Core\Authenticator;
-use \Core\Session;
+use Core\Authenticator;
+use Core\Session;
 
 $header = "Log in";
 $errors = [];
@@ -37,6 +37,5 @@ if(isset($_POST['submit'])) {
         redirect('/');
     }
 }
-
 
 require view("login/index.view.php");

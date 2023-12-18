@@ -15,15 +15,14 @@ if(Session::has('signup_errors')) {
     Session::unflash();
 }
 
-
 if(isset($_POST['submit'])){
     if(!empty($_POST["email"]) && !empty($_POST["password"]))
     {
         $email = $_POST["email"];
         $password = $_POST["password"];
         // if email already exists in DB
-        $emailExists = Authenticator::email($email);
-        if($emailExists)
+        $user = Authenticator::email($email);
+        if($user)
         {
             $errors[] = "Email already in use";
             Session::flash("signup_errors", $errors);
@@ -58,6 +57,5 @@ if(isset($_POST['submit'])){
     redirect('/signup');
 
 }
-
 
 require view("signup/index.view.php");

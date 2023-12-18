@@ -14,7 +14,7 @@ if(isset($_POST["content"]) && isset($_POST["title"]))
 {
     $content = htmlspecialchars($_POST["content"], ENT_QUOTES, 'UTF-8');
     $title = htmlspecialchars($_POST["title"], ENT_QUOTES, 'UTF-8');
-    require base("controllers/journal/update.php");
+    require base(CONTROLLER_PATH . "journal/update.php");
 }
 
 $db = new Database();
@@ -25,8 +25,9 @@ $result = $db->query("SELECT * FROM `entries` WHERE user_id = :id AND id = :post
     "postId" => $postId
 ])->findOrFail();
 
-
-
-
+if(!$result)
+{
+    redirect("/journal");
+}
 
 require view("journal/edit.view.php");
