@@ -1,6 +1,6 @@
-<?php require(base("views/partials/header.php")) ?>
-<?php require(base("views/partials/nav.php")) ?>
-<?php require(base("views/partials/banner.php")) ?>
+<?php require(view("partials/header.view.php")) ?>
+<?php require(view("partials/nav.view.php")) ?>
+<?php require(view("partials/banner.view.php")) ?>
 
 <main>
     <div class="container mt-5">
@@ -66,6 +66,4 @@
     });
 </script>
 
-
-
-<?php require(base('views/partials/footer.php')) ?>
+<?php require(view('partials/footer.view.php')) ?>

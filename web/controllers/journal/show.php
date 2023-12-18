@@ -10,9 +10,7 @@ if(!Session::has("userId"))
 }
 
 $postId = $_GET["id"];
-
 $db = new Database();
-
 $userId = Session::get("userId");
 
 $result = $db->query("SELECT * FROM `entries` WHERE user_id = :id AND id = :postId", [
@@ -20,8 +18,9 @@ $result = $db->query("SELECT * FROM `entries` WHERE user_id = :id AND id = :post
     "postId" => $postId
 ])->findOrFail();
 
-
-
-
+if(!$result)
+{
+    redirect("/journal");
+}
 
 require view("journal/show.view.php");
