@@ -10,9 +10,6 @@ if(!isset($_SESSION["userId"]))
 }
 $userId = Session::get("userId");
 
-
-
-
 $db = new Database();
 
 if(isset($_POST["content"]) && isset($_POST["title"]))
@@ -28,9 +25,6 @@ if(isset($_POST["content"]) && isset($_POST["title"]))
 
     redirect('/journal');
 }
-
-
-
 
 require view("journal/create.view.php");
 
