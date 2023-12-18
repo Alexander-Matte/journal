@@ -1,26 +1,35 @@
 <?php
 namespace Core;
-
-
+/**
+ * Authenticates user and email within a database
+ */
 class Authenticator
 {
-    public static function authenticateUser($email, $password)
+    /**
+     * Checks if user is in DB then checks if given password matches DB. Returns user array if
+     * given password matches with DB and false if not found
+     * @param string $email
+     * @param string $password
+     * @return mixed
+     */
+    public static function authenticateUser(string $email, string $password)
     {
-        $db = new Database();
-        //Check database if user exists
-        $result = $db->query("SELECT * FROM `users` WHERE email = :email", [
-            "email" => $email,
-        ])->findOrFail();
+        // selects user based on email
+        $user = self::email($email);
 
-        if(!password_verify($password, $result['password']))
+        if(!password_verify($password, $user['password']))
         {
             return false;
         }
-
-       return $result;
+       return $user;
     }
 
-    public static function email($email)
+    /**
+     * Query's DB if email already exists. Returns user array if it does, and false if it doesn't find given email
+     * @param string $email
+     * @return mixed
+     */
+    public static function email(string $email)
     {
         $db = new Database();
         //Check database if user exists
