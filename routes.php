@@ -3,43 +3,43 @@
 $routes = [
     [
     "url" => "/",
-    "controller" => "controllers/index.php"
+    "controller" =>  CONTROLLER_PATH . "index.php"
     ],
     [
     "url" => "/contact",
-    "controller" => "controllers/contact.php"
+    "controller" => CONTROLLER_PATH . "contact.php"
     ],
     [
     "url" => "/login",
-    "controller" => "controllers/login/index.php"
+    "controller" => CONTROLLER_PATH . "login/index.php"
     ],
     [
     "url" => "/signup",
-    "controller" => "controllers/signup/index.php"
+    "controller" => CONTROLLER_PATH . "signup/index.php"
     ],
     [
     "url" => "/journal",
-    "controller" => "controllers/journal/index.php"
+    "controller" => CONTROLLER_PATH . "journal/index.php"
     ],
     [
     "url" => "/journal/create",
-    "controller" => "controllers/journal/create.php"
+    "controller" => CONTROLLER_PATH . "journal/create.php"
     ],
     [
     "url" => "/journal/show",
-    "controller" => "controllers/journal/show.php"
+    "controller" => CONTROLLER_PATH . "journal/show.php"
     ],
     [
     "url" => "/logout",
-    "controller" => "controllers/logout.php"
+    "controller" => CONTROLLER_PATH . "logout.php"
     ],
     [
     "url" => "/journal/edit",
-    "controller" => "controllers/journal/edit.php"
+    "controller" => CONTROLLER_PATH . "journal/edit.php"
     ],
     [
     "url" => "/journal/destroy",
-    "controller" => "controllers/journal/destroy.php"
+    "controller" => CONTROLLER_PATH . "journal/destroy.php"
     ],
     
 ];
