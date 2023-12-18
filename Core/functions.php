@@ -1,5 +1,10 @@
-<?php 
+<?php
 
+/**
+ * Debugging tool to see value of given var
+ * @param $value
+ * @return void
+ */
 function dd($value)
 {
     echo "<pre>";
@@ -8,17 +13,32 @@ function dd($value)
     die();
 }
 
-function view($viewName)
+/**
+ * Returns specific view file
+ * @param string $viewName
+ * @return string
+ */
+function view(string $viewName): string
 {
-    return base('views/' . $viewName);
+    return base('web/views/' . $viewName);
 }
 
-function base(string $path)
+/**
+ * Returns file starting from base of project to provided path
+ * @param string $path
+ * @return string
+ */
+function base(string $path): string
 {
     return BASE_PATH . $path;
 }
 
-function abort($statusCode = 404)
+/**
+ * Handles http errors by loading appropriate error code file
+ * @param int $statusCode
+ * @return void
+ */
+function abort(int $statusCode = 404)
 {
     http_response_code($statusCode);
     require base('Core/httpResponse.php');
@@ -26,18 +46,25 @@ function abort($statusCode = 404)
 
 }
 
-function redirect($path)
+/**
+ * Redirects user to provided path and exits
+ * @param string $path
+ * @return void
+ */
+function redirect(string $path)
 {
     header('Location: ' . $path);
     exit();
 }
 
-function hashPassword($password)
+/**
+ * Hashes password
+ * @param string $password
+ * @return false|string|null
+ */
+function hashPassword(string $password)
 {
     return password_hash($password, PASSWORD_DEFAULT);
-
 }
-
-
 
 ?>

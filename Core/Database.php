@@ -1,17 +1,32 @@
 <?php
-
 namespace Core;
 use mysql_xdevapi\Statement;
 use PDO;
 use PDOException;
 
-
+/**
+ * Creates Database object
+ */
 class Database
 {
+
     public $config;
-    public $dsn;
-    public $connection;
+    /**
+     * @var string
+     */
+    public string $dsn;
+    /**
+     * @var PDO
+     */
+    public PDO $connection;
+    /**
+     * @var
+     */
     public $statement;
+
+    /**
+     * Constructor builds connection to DB
+     */
     public function __construct()
     {
         $this->config = require base("config.php");
@@ -23,24 +38,42 @@ class Database
         ]);
     }
 
-    public function query($query, $params = [])
+    /**
+     * Query's database
+     * @param string $query
+     * @param array $params
+     * @return $this
+     */
+    public function query(string $query, $params = []): Database
     {
         $this->statement = $this->connection->prepare($query);
-
         $this->statement->execute($params);
 
         return $this;
     }
+
+    /**
+     * Returns all records from DB from query
+     * @return mixed
+     */
     public function findAll()
     {
         return $this->statement->fetchAll();
     }
 
+    /**
+     * Returns specific record from DB from query
+     * @return mixed
+     */
     public function find()
     {
         return $this->statement->fetch();
     }
 
+    /**
+     * Returns specific record from DB from query OR returns false if not found
+     * @return false|mixed
+     */
     public function findOrFail()
     {
         $result = $this->find();
@@ -52,7 +85,15 @@ class Database
         return $result;
     }
 
-    public function addUser($email, $password, $firstname = null, $lastname = null)
+    /**
+     * Inserts user into DB
+     * @param string $email
+     * @param string $password
+     * @param string|null $firstname
+     * @param string|null $lastname
+     * @return void
+     */
+    public function addUser(string $email, string $password, string $firstname = null, string $lastname = null)
     {
         $this->query("INSERT INTO users (firstname, lastname, password, email)
             VALUES (:firstname, :lastname, :password, :email)", [
@@ -62,6 +103,4 @@ class Database
             "email" => $email
         ]);
     }
-
-
 }
