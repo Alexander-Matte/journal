@@ -11,5 +11,8 @@
             "name": "Alexander Matte"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-mysql_xdevapi": "*",
+        "ext-pdo": "*"
+    }
 }
