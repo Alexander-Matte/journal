@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 /**
  * Debugging tool to see value of given var
  * @param $value
@@ -65,6 +67,15 @@ function redirect(string $path)
 function hashPassword(string $password)
 {
     return password_hash($password, PASSWORD_DEFAULT);
+}
+
+function isLoggedIn()
+{
+    if(!Session::has("userId"))
+    {
+        return false;
+    }
+    return true;
 }
 
 ?>

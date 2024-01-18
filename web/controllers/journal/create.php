@@ -4,7 +4,7 @@ use Core\Session;
 
 $header = "Create a journal entry";
 
-if(!isset($_SESSION["userId"]))
+if(!isLoggedIn())
 {
     abort(403);
 }

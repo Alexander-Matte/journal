@@ -4,7 +4,7 @@ use Core\Session;
 
 $header = "Journal Entry";
 
-if(!Session::has("userId"))
+if(!isLoggedIn())
 {
     abort(403);
 }

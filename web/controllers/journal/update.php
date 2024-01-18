@@ -2,10 +2,11 @@
 use Core\Database;
 use Core\Session;
 
-if(!Session::has("userId"))
+if(!isLoggedIn())
 {
     abort(403);
 }
+
 $userId = Session::get("userId");
 $postId = $_GET["id"];
 
