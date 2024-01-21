@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect all requests to public/index.php
+    RewriteCond %{REQUEST_URI} !^/public/index\.php
+    RewriteRule ^ public/index.php [L]
+
+    # Prevent access to files and directories outside "public"
+    RewriteCond %{REQUEST_URI} \.\.
+    RewriteRule ^ - [F]
+</IfModule>
