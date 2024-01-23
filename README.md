@@ -28,4 +28,4 @@ Feel free to explore the code, experiment with the features, and gain insights i
 ## Related
 
 Here you can find my Dockerized version of this Journal application
-- [Dockerized Journal Application](https://github.com/Alexander-Matte/journal)
+- [Dockerized Journal Application](https://github.com/Alexander-Matte/dockerized-journal)
